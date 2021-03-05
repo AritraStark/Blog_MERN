@@ -13,6 +13,9 @@ export const Footer = () => {
                 {new Date().getFullYear()}
                 {'.'}
             </Typography>
+            <div>
+                <br/>
+            </div>
         </div>
     )
 }

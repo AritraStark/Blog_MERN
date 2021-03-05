@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
+    margin:'1em 2em',
   },
   overlay: {
     position: 'absolute',
@@ -23,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     right: 0,
     left: 0,
+    margin:'1em',
     backgroundColor: 'rgba(0,0,0,.3)',
   },
   mainFeaturedPostContent: {
@@ -35,27 +37,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Blog = ({props}) => {
+export const Blog = ({id,title,body}) => {
+  
+    const image= 'https://source.unsplash.com/random'
+    const imgText= 'main image description'
     const classes = useStyles();
-    const { post } = props;
-
     return (
-        <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` }}>
+        <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${image})` }}>
         {/* Increase the priority of the hero background image */}
-        {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
+        {<img style={{ display: 'none' }} src={image} alt={imgText} />}
         <div className={classes.overlay} />
         <Grid container>
             <Grid item md={6}>
             <div className={classes.mainFeaturedPostContent}>
                 <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                {post.title}
+                {title}
                 </Typography>
                 <Typography variant="h5" color="inherit" paragraph>
-                {post.description}
+                {body}
                 </Typography>
-                <Link variant="subtitle1" href="#">
-                {post.linkText}
-                </Link>
+                <Link to={`/posts/${id}`} className="link-light">Continue Reading ... </Link>
             </div>
             </Grid>
         </Grid>
