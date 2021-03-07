@@ -19,12 +19,12 @@ This is a Blog website built on MERN stack using Redux as a state management sys
 
 #### Technologies
 
-- [<img align="left" alt="MongoDB" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mongodb/mongodb.png" />] MongoDb
-- [<img align="left" alt="Node.js" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" />] NodeJS
-- [<img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/express/express.png" />] Express
-- [<img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />] React
-- [<img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/redux/redux.png" />] Redux
-- [<img align="left" alt="React" width="26px" src="https://camo.githubusercontent.com/25c2c7a93297a438e002e1b85b45a7e82fd6f51eedd16ee37679120c5b14379d/68747470733a2f2f6434797438786c396237696e2e636c6f756466726f6e742e6e65742f6173736574732f686f6d652f6c6f676f747970652d6865726f6b752e706e67" />] Heroku
+- <img align="left" alt="MongoDB" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mongodb/mongodb.png" /> MongoDb
+- <img align="left" alt="Node.js" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" /> NodeJS
+- <img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/express/express.png" /> Express
+- <img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" /> React
+- <img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/redux/redux.png" /> Redux
+- <img align="left" alt="React" width="26px" src="https://camo.githubusercontent.com/25c2c7a93297a438e002e1b85b45a7e82fd6f51eedd16ee37679120c5b14379d/68747470733a2f2f6434797438786c396237696e2e636c6f756466726f6e742e6e65742f6173736574732f686f6d652f6c6f676f747970652d6865726f6b752e706e67" />] Heroku
 
 [Back To The Top](#read-me-template)
 
@@ -37,8 +37,8 @@ Anyone is welcome to clone the repo or contribute to the current
 
 #### API Reference
 
-```html
-    <p> import Repo from 'github' </p>
+```javascript
+     import Repo from 'github' 
 ```
 [Back To The Top](#read-me-template)
 
