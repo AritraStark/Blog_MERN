@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Header() {
+export default function Header({user}) {
   const classes = useStyles();
   const sections = [
     { title: 'Technology', url: '#' },

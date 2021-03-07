@@ -7,7 +7,8 @@ import {
     getPost,
     createPost,
     updatePost,
-    deletePost
+    deletePost,
+    getUserPosts
 } from '../controller/postController.js'
 
 import authM from '../middleware/authMiddleware.js'
@@ -15,5 +16,6 @@ import authM from '../middleware/authMiddleware.js'
 
 router.route('/').get(getPosts).post(authM, createPost)
 router.route('/:id').get(getPost).post(authM, updatePost).delete(authM, deletePost)
+router.get('/individual/:id', authM, getUserPosts)
 
 export default router

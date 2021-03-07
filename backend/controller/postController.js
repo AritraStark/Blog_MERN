@@ -76,7 +76,7 @@ const updatePost = asyncHandler(async (req, res) => {
                 new: true
             })
 
-        res.json(post);
+        res.json(post)
     }
 })
 
@@ -88,10 +88,26 @@ const deletePost = asyncHandler(async (req, res) => {
     res.json({ msg: "User removed" })
 })
 
+//@route GET /api/posts/individual/:id
+//@desc Get users post
+//@access Private
+const getUserPosts = asyncHandler(async (req, res) => {
+    const id = req.params.id
+    const userPosts = await Posts.find({ user: id })
+    try {
+        res.status(200)
+            .json(userPosts)
+    } catch (error) {
+        res.status(400)
+        throw new Error(error.message ? error.message : error)
+    }
+})
+
 export {
     getPosts,
     getPost,
     createPost,
     updatePost,
-    deletePost
+    deletePost,
+    getUserPosts
 }
