@@ -1,5 +1,5 @@
-#BLOG
-
+# BLOG
+[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com)
 
 ### Table of Contents
 
@@ -39,6 +39,12 @@ Anyone is welcome to clone the repo or contribute to the current
 
 ```javascript
      import Repo from 'github' 
+     
+     const pullReq(){
+          if(interested)
+          improvement++
+     }
+     
 ```
 [Back To The Top](#read-me-template)
 
@@ -46,6 +52,9 @@ Anyone is welcome to clone the repo or contribute to the current
 
 ## References
 
+- [React Docs](https://reactjs.org/docs/getting-started.html)
+- [Node.js Docs](https://nodejs.org/api/)
+- [Git and GitHub](https://www.digitalocean.com/community/tutorials/how-to-use-git-a-reference-guide)
 
 
 [Back To The Top](#read-me-template)
