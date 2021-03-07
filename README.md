@@ -4,7 +4,6 @@
 ### Table of Contents
 
 - [Description](#description)
-- [How To Use](#how-to-use)
 - [References](#references)
 - [License](#license)
 - [Author Info](#author-info)
@@ -15,7 +14,7 @@
 
 This is a Blog website built on MERN stack using Redux as a state management system and Material.UI in React frontend. The project has been deployed in heroku and can be found at [link](https://starkblogmern.herokuapp.com/) 
 
-[Back To The Top](#read-me-template)
+[Back To The Top](#Table-of-Contents)
 
 #### Technologies
 
@@ -26,7 +25,7 @@ This is a Blog website built on MERN stack using Redux as a state management sys
 - <img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/redux/redux.png" /> Redux
 - <img align="left" alt="React" width="26px" src="https://camo.githubusercontent.com/25c2c7a93297a438e002e1b85b45a7e82fd6f51eedd16ee37679120c5b14379d/68747470733a2f2f6434797438786c396237696e2e636c6f756466726f6e742e6e65742f6173736574732f686f6d652f6c6f676f747970652d6865726f6b752e706e67" /> Heroku
 
-[Back To The Top](#read-me-template)
+[Back To The Top](#Table-of-Contents)
 
 ---
 
@@ -46,7 +45,7 @@ Anyone is welcome to clone the repo or contribute to the current
      }
      
 ```
-[Back To The Top](#read-me-template)
+[Back To The Top](#Table-of-Contents)
 
 ---
 
@@ -57,7 +56,7 @@ Anyone is welcome to clone the repo or contribute to the current
 - [Git and GitHub](https://www.digitalocean.com/community/tutorials/how-to-use-git-a-reference-guide)
 
 
-[Back To The Top](#read-me-template)
+[Back To The Top](#Table-of-Contents)
 
 ---
 
@@ -85,7 +84,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[Back To The Top](#read-me-template)
+[Back To The Top](#Table-of-Contents)
 
 ---
 
@@ -93,4 +92,4 @@ SOFTWARE.
 
 - LinkedIn [<img align="left" alt="AritraStark | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />](https://www.linkedin.com/in/aritra-das-ba7709135/)
 
-[Back To The Top](#read-me-template)
+[Back To The Top](#Table-of-Contents)
