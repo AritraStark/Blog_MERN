@@ -53,7 +53,7 @@ export const getAllPostsReducer = (state = { posts: [] }, action) => {
     }
 }
 
-export const updatePostReducer = (state = { posts: [] , success:false, postId: '' }, action) => {
+export const updatePostReducer = (state = { posts: [] , success:false, post: '' }, action) => {
     switch (action.type) {
         case UPDATE_POST_INIT:
             return {
@@ -77,7 +77,7 @@ export const updatePostReducer = (state = { posts: [] , success:false, postId: '
         case SET_POST_ID:
             return{
                 ...state,
-                postId: action.payload
+                post: action.payload
             }
         case TOGGLE_UPDATE_FALSE:
             return{

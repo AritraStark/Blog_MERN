@@ -9,9 +9,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import EditIcon from '@material-ui/icons/Edit';
+import Button from '@material-ui/core/Button';
+import DeleteIcon from '@material-ui/icons/Delete';
 import {useDispatch } from 'react-redux';
-import {setPostID, toggleUpdate} from '../actions/postActions';
-import { Link } from 'react-router-dom';
+import {deletePost, setPost, toggleUpdate} from '../actions/postActions';
+import { Link,useHistory } from 'react-router-dom';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,26 +27,35 @@ const useStyles = makeStyles((theme) => ({
     avatar: {
         backgroundColor: red[500],
     },
+    button: {
+        margin: theme.spacing(1),
+    },
 }));
 
 export default function BlogAuth({post}) {
+
     const classes = useStyles()
     const dispatch = useDispatch()
+    const history = useHistory()
 
+    function handleDeleteClick(){
+        dispatch(deletePost(post._id))
+        history.push('/home')
+    }
     return (
         <Card className={classes.root}>
             <CardHeader
                 avatar={
                     <Avatar aria-label="recipe" className={classes.avatar}>
                         {post.title[0]}
-          </Avatar>
+                    </Avatar>
                 }
                 action={
                     <Link to='/update'>
-                        <IconButton aria-label="settings">
+                        <IconButton aria-label="settings" className={classes.button}>
                             <EditIcon onClick={()=>{
                                 dispatch(toggleUpdate())
-                                dispatch(setPostID(post._id))
+                                dispatch(setPost(post))
                                 }}/>
                         </IconButton>
                     </Link>
@@ -59,7 +71,18 @@ export default function BlogAuth({post}) {
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
                     {post.body}
-        </Typography>
+                </Typography>
+            </CardContent>
+            <CardContent>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    className={classes.button}
+                    startIcon={<DeleteIcon />}
+                    onClick={handleDeleteClick}
+                >
+                    Delete
+                </Button>
             </CardContent>
         </Card>
     );

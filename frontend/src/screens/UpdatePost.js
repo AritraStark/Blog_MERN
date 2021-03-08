@@ -39,12 +39,12 @@ export const UpdatePost = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const {success,postId} = useSelector((state)=>state.postUpdate)
+    const {success,post} = useSelector((state)=>state.postUpdate)
 
-    const [title, setTitle] = useState()
-    const [body, setBody] = useState()
-    
-
+    const [title, setTitle] = useState(post.title)
+    const [body, setBody] = useState(post.body)
+    // setTitle(post.title)
+    // setBody(post.body)
 
     useEffect(() => {
         if(success){
@@ -53,7 +53,7 @@ export const UpdatePost = () => {
     }, [history,success])
 
     function handleUpdatePostClick(){
-        dispatch(updatedPost(postId,title,body))
+        dispatch(updatedPost(post._id,title,body))
     }
 
     return (
@@ -78,7 +78,8 @@ export const UpdatePost = () => {
                             id="title"
                             label="Post Title"
                             name="title"
-                            autoComplete="title"
+                            autoComplete={title}
+                            value={title}
                             onChange={(e)=>{
                                 setTitle(e.target.value)
                             }}
@@ -91,8 +92,9 @@ export const UpdatePost = () => {
                             fullWidth
                             name="body"
                             label="Post Body"
-                            id="bodyy"
-                            autoComplete="body"
+                            id="body"
+                            autoComplete={body}
+                            value={body}
                             onChange={(e)=>{
                                 setBody(e.target.value)
                             }}

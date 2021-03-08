@@ -155,7 +155,6 @@ export const deletePost = (id) => async (dispatch,getState) => {
         const config = {
             headers: {
                 'x-auth': userDetails.token,
-                'Content/type': 'application/json'
             }
         }
 
@@ -202,10 +201,10 @@ export const getUserPosts = (id) => async(dispatch,getState) =>{
     }
 }
 
-export const setPostID = (id) =>(dispatch)=>{
+export const setPost = (post) =>(dispatch)=>{
     dispatch({
         type: SET_POST_ID,
-        payload:id
+        payload:post
     })
 }
 
