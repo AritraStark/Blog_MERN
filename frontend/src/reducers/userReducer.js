@@ -12,8 +12,8 @@ export const loginReducer = (state = {success: false}, action) => {
     switch(action.type){
         case LOGIN_INIT:
             return {
-                ...state,
                 loading: true,
+                success:false
             }
         case LOGIN_SUCCESS:
             return{
@@ -29,7 +29,6 @@ export const loginReducer = (state = {success: false}, action) => {
             }
         case LOGOUT:
             return{
-                ...state,
                 loading:false,
                 success:false
             }
@@ -38,12 +37,12 @@ export const loginReducer = (state = {success: false}, action) => {
     }
 }
 
-export const signupReducer = (state = {success: false}, action) => {
+export const signupReducer = (state = {}, action) => {
     switch(action.type){
         case SIGNUP_INIT:
             return {
-                ...state,
                 loading: true,
+                success:false
             }
         case SIGNUP_SUCCESS:
             return{
@@ -53,9 +52,9 @@ export const signupReducer = (state = {success: false}, action) => {
             }
         case SIGNUP_FAIL:
             return{
-                ...state,
                 loading: false,
                 error: action.payload,
+                success: false
             }
         default:
             return state

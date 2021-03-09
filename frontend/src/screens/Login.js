@@ -53,7 +53,7 @@ export const LoginComponent = () => {
     function handleLoginClick(e) {
         e.preventDefault()
         dispatch(login(email,password))
-        setOpen(!success)
+        setTimeout(()=>setOpen(!success),1500)
     }
 
     const handleAlertClose = (event, reason) => {
