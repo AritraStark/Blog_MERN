@@ -10,6 +10,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 import {Footer} from '../components/Footer';
 import {signup} from '../actions/userActions';
 import {useDispatch, useSelector } from 'react-redux';
@@ -34,6 +36,10 @@ import {useDispatch, useSelector } from 'react-redux';
     },
   }));
 
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
 export const SignUp = () => {
     const classes = useStyles()
     const dispatch = useDispatch()
@@ -44,6 +50,7 @@ export const SignUp = () => {
     const [name,setName] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         if(success){
@@ -53,8 +60,16 @@ export const SignUp = () => {
 
     function handleSignUpClick(e){
         dispatch(signup(name,email,password))
-       
+        setOpen(!success)
     }
+
+    const handleAlertClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        setOpen(false);
+    };
 
     return (
         <Fragment>
@@ -131,6 +146,11 @@ export const SignUp = () => {
                         </Link>
                         </Grid>
                     </Grid>
+                    <Snackbar open={open} autoHideDuration={2000} onClose={handleAlertClose}>
+                        <Alert onClose={handleAlertClose} severity="error">
+                            Signup Unsuccessful
+                        </Alert>
+                    </Snackbar>
                     </form>
                 </div>
                 <Box mt={5}>

@@ -9,6 +9,8 @@ import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 import Container from '@material-ui/core/Container';
 import {Footer} from '../components/Footer.js'
 import {useDispatch, useSelector } from 'react-redux'
@@ -34,25 +36,37 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
 export const LoginComponent = () => {
     const history = useHistory()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
+    const [open, setOpen] = useState(false);
 
     const dispatch = useDispatch()
 
-    const userLogin = useSelector(state=>state.userDetails)
-
+    const {success} = useSelector(state=>state.userLogin)
+    
     function handleLoginClick(e) {
         e.preventDefault()
         dispatch(login(email,password))
-        history.push('/profile')
+        setOpen(!success)
     }
 
+    const handleAlertClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+        setOpen(false);
+    };
+
     useEffect(()=>{
-        if(userLogin&&userLogin.success)
+        if(success)
         history.push('/profile')
-    },[userLogin,history])
+    },[success,history])
 
     const classes = useStyles()
     return (
@@ -102,7 +116,7 @@ export const LoginComponent = () => {
                         color="primary"
                         className={classes.submit}
                     >
-                        Sign In
+                        Log In
                     </Button>
                     <Grid container>
                         <Grid item xs>
@@ -116,6 +130,11 @@ export const LoginComponent = () => {
                         
                         </Grid>
                     </Grid>
+                    <Snackbar open={open} autoHideDuration={2000} onClose={handleAlertClose}>
+                        <Alert onClose={handleAlertClose} severity="error">
+                            Login Unsuccessful
+                        </Alert>
+                    </Snackbar>
                     </form>
                 </div>
                 <Box mt={8}>
